@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///opt/homebrew/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.98 scan initiated Thu Oct  9 02:15:17 2025 as: nmap -Pn -oX output.xml -p 80,8443,10000 51.15.8.251 51.15.9.89 -->
+<nmaprun scanner="nmap" args="nmap -Pn -oX output.xml -p 80,8443,10000 51.15.8.251 51.15.9.89" start="1759968917"
+         startstr="Thu Oct  9 02:15:17 2025" version="7.98" xmloutputversion="1.05">
+    <scaninfo type="connect" protocol="tcp" numservices="3" services="80,8443,10000"/>
+    <verbose level="0"/>
+    <debugging level="0"/>
+    <host starttime="1759968917" endtime="1759968917">
+        <status state="up" reason="user-set" reason_ttl="0"/>
+        <address addr="51.15.8.251" addrtype="ipv4"/>
+        <hostnames>
+            <hostname name="51-15-8-251.rev.poneytelecom.eu" type="PTR"/>
+        </hostnames>
+        <ports>
+            <port protocol="tcp" portid="80">
+                <state state="open" reason="syn-ack" reason_ttl="0"/>
+                <service name="http" method="table" conf="3"/>
+            </port>
+            <port protocol="tcp" portid="8443">
+                <state state="open" reason="syn-ack" reason_ttl="0"/>
+                <service name="https-alt" method="table" conf="3"/>
+            </port>
+            <port protocol="tcp" portid="10000">
+                <state state="closed" reason="conn-refused" reason_ttl="0"/>
+                <service name="snet-sensor-mgmt" method="table" conf="3"/>
+            </port>
+        </ports>
+        <times srtt="15681" rttvar="9442" to="100000"/>
+    </host>
+    <host starttime="1759968917" endtime="1759968917">
+        <status state="up" reason="user-set" reason_ttl="0"/>
+        <address addr="51.15.9.89" addrtype="ipv4"/>
+        <hostnames>
+            <hostname name="51-15-9-89.rev.poneytelecom.eu" type="PTR"/>
+        </hostnames>
+        <ports>
+            <port protocol="tcp" portid="80">
+                <state state="open" reason="syn-ack" reason_ttl="0"/>
+                <service name="http" method="table" conf="3"/>
+            </port>
+            <port protocol="tcp" portid="8443">
+                <state state="open" reason="syn-ack" reason_ttl="0"/>
+                <service name="https-alt" method="table" conf="3"/>
+            </port>
+            <port protocol="tcp" portid="10000">
+                <state state="closed" reason="conn-refused" reason_ttl="0"/>
+                <service name="snet-sensor-mgmt" method="table" conf="3"/>
+            </port>
+        </ports>
+        <times srtt="17605" rttvar="12661" to="100000"/>
+    </host>
+    <runstats>
+        <finished time="1759968917" timestr="Thu Oct  9 02:15:17 2025"
+                  summary="Nmap done at Thu Oct  9 02:15:17 2025; 2 IP addresses (2 hosts up) scanned in 0.07 seconds"
+                  elapsed="0.07" exit="success"/>
+        <hosts up="2" down="0" total="2"/>
+    </runstats>
+</nmaprun>

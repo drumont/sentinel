@@ -1,0 +1,53 @@
+[
+  {
+    "name": "kafka",
+    "hosts": [
+      "51.15.8.251",
+      "51.15.9.89"
+    ],
+    "ports": [
+      "80",
+      "8443"
+    ],
+    "interval": 30
+  },
+  {
+    "name": "kafka",
+    "hosts": [
+      "host1",
+      "host2",
+      "host3"
+    ],
+    "ports": [
+      "8080",
+      "9000"
+    ],
+    "interval": 300
+  },
+  {
+    "name": "elasticsearch",
+    "hosts": [
+      "host11",
+      "host21",
+      "host31"
+    ],
+    "ports": [
+      "8082",
+      "10000"
+    ],
+    "interval": 150
+  },
+  {
+    "name": "postgres",
+    "hosts": [
+      "host12",
+      "host22",
+      "host32"
+    ],
+    "ports": [
+      "8047",
+      "11000"
+    ],
+    "interval": 600
+  }
+]

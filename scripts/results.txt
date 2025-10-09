@@ -1,0 +1,15 @@
+Nmap scan report for 51-15-8-251.rev.poneytelecom.eu (51.15.8.251)
+Host is up (0.016s latency).
+
+PORT     STATE SERVICE
+80/tcp   open  http
+8443/tcp open  https-alt
+
+Nmap scan report for 51-15-9-89.rev.poneytelecom.eu (51.15.9.89)
+Host is up (0.019s latency).
+
+PORT     STATE SERVICE
+80/tcp   open  http
+8443/tcp open  https-alt
+
+Nmap done: 2 IP addresses (2 hosts up) scanned in 0.06 seconds

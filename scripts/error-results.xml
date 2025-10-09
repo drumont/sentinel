@@ -1,0 +1,12 @@
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///opt/homebrew/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.98 scan initiated Thu Oct  9 11:55:12 2025 as: nmap -oX - -Pn -p 8080,9000 &quot;host1 host2 host3&quot; -->
+<nmaprun scanner="nmap" args="nmap -oX - -Pn -p 8080,9000 &quot;host1 host2 host3&quot;" start="1760003712" startstr="Thu Oct  9 11:55:12 2025" version="7.98" xmloutputversion="1.05">
+    <scaninfo type="connect" protocol="tcp" numservices="2" services="8080,9000"/>
+    <verbose level="0"/>
+    <debugging level="0"/>
+    Failed to resolve "host1 host2 host3".
+    WARNING: No targets were specified, so 0 hosts scanned.
+    <runstats><finished time="1760003712" timestr="Thu Oct  9 11:55:12 2025" summary="Nmap done at Thu Oct  9 11:55:12 2025; 0 IP addresses (0 hosts up) scanned in 0.53 seconds" elapsed="0.53" exit="success"/><hosts up="0" down="0" total="0"/>
+    </runstats>
+</nmaprun>

@@ -1,0 +1,2219 @@
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": ""
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": ""
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": ""
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": ""
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:04:27 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": ""
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": ""
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": ""
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": ""
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:04:56 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": ""
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": ""
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": ""
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": ""
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:05:21 2025; 2 IP addresses (2 hosts up) scanned in 0.07 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:05:30 2025; 2 IP addresses (2 hosts up) scanned in 0.06 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:06:00 2025; 2 IP addresses (2 hosts up) scanned in 0.06 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:06:30 2025; 2 IP addresses (2 hosts up) scanned in 0.06 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:07:01 2025; 2 IP addresses (2 hosts up) scanned in 0.06 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:07:12 2025; 2 IP addresses (2 hosts up) scanned in 0.06 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:07:42 2025; 2 IP addresses (2 hosts up) scanned in 0.07 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:08:12 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:08:20 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:08:50 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:09:20 2025; 2 IP addresses (2 hosts up) scanned in 0.06 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:09:37 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:10:07 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:10:37 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:11:07 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:11:37 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:12:07 2025; 2 IP addresses (2 hosts up) scanned in 0.06 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:12:37 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:13:07 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:13:29 2025; 2 IP addresses (2 hosts up) scanned in 0.06 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:13:59 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:14:29 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "finished": {
+        "summary": "Nmap done at Fri Oct 10 00:14:59 2025; 2 IP addresses (2 hosts up) scanned in 0.06 seconds"
+      }
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "end": "1760048496",
+      "summary": "Nmap done at Fri Oct 10 00:21:36 2025; 2 IP addresses (2 hosts up) scanned in 0.08 seconds"
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "end": "1760048526",
+      "summary": "Nmap done at Fri Oct 10 00:22:06 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {}
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {}
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {}
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {}
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "end": "1760048563",
+      "summary": "Nmap done at Fri Oct 10 00:22:43 2025; 2 IP addresses (2 hosts up) scanned in 0.07 seconds"
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp"
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp"
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp"
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp"
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "end": "1760048594",
+      "summary": "Nmap done at Fri Oct 10 00:23:14 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "xml-name": {
+      "Space": "",
+      "Local": "nmaprun"
+    },
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp"
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp"
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp"
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp"
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "end": "1760048610",
+      "summary": "Nmap done at Fri Oct 10 00:23:30 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "command": "nmap -Pn -p 80,8443 -oX - 51.15.8.251 51.15.9.89",
+    "start": "",
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "end": "1760049881",
+      "summary": "Nmap done at Fri Oct 10 00:44:41 2025; 2 IP addresses (2 hosts up) scanned in 0.06 seconds"
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "command": "nmap -Pn -p 80,8443 -oX - 51.15.8.251 51.15.9.89",
+    "start": "1760049906",
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "end": "1760049906",
+      "summary": "Nmap done at Fri Oct 10 00:45:06 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "command": "nmap -Pn -p 80,8443 -oX - 51.15.8.251 51.15.9.89",
+    "start": "1760049908",
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "end": "1760049908",
+      "summary": "Nmap done at Fri Oct 10 00:45:08 2025; 2 IP addresses (2 hosts up) scanned in 0.06 seconds"
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "command": "nmap -Pn -p 80,8443 -oX - 51.15.8.251 51.15.9.89",
+    "start": "1760049938",
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "end": "1760049938",
+      "summary": "Nmap done at Fri Oct 10 00:45:38 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "command": "nmap -Pn -p 80,8443 -oX - 51.15.8.251 51.15.9.89",
+    "start": "1760049968",
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "end": "1760049968",
+      "summary": "Nmap done at Fri Oct 10 00:46:08 2025; 2 IP addresses (2 hosts up) scanned in 0.04 seconds"
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "command": "nmap -Pn -p 80,8443 -oX - 51.15.8.251 51.15.9.89",
+    "start": "1760049995",
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "end": "1760049995",
+      "summary": "Nmap done at Fri Oct 10 00:46:35 2025; 2 IP addresses (2 hosts up) scanned in 0.07 seconds"
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "command": "nmap -Pn -p 80,8443 -oX - 51.15.8.251 51.15.9.89",
+    "start": "1760050087",
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "end": "1760050087",
+      "summary": "Nmap done at Fri Oct 10 00:48:07 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+    }
+  }
+}
+{
+  "pool-name": "kafka",
+  "output": {
+    "command": "nmap -Pn -p 80,8443 -oX - 51.15.8.251 51.15.9.89",
+    "start": "1760050117",
+    "host": [
+      {
+        "address": {
+          "addr": "51.15.8.251",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      },
+      {
+        "address": {
+          "addr": "51.15.9.89",
+          "type": "ipv4"
+        },
+        "ports": [
+          {
+            "port-id": "80",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          },
+          {
+            "port-id": "8443",
+            "protocol": "tcp",
+            "state": {
+              "state": "open"
+            }
+          }
+        ]
+      }
+    ],
+    "run-stats": {
+      "end": "1760050117",
+      "summary": "Nmap done at Fri Oct 10 00:48:37 2025; 2 IP addresses (2 hosts up) scanned in 0.05 seconds"
+    }
+  }
+}

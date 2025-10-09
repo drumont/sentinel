@@ -1,0 +1,78 @@
+package scan
+
+import (
+	"errors"
+	"log"
+	"os/exec"
+	"sentinel/internal/output"
+	out "sentinel/internal/output"
+	p "sentinel/internal/pools"
+	"time"
+)
+
+type Scan struct {
+	Pool *p.Pool
+}
+
+type ScanResult struct {
+	PoolName string       `json:"pool-name"`
+	Output   *out.NmapRun `json:"output"`
+}
+
+func NewScan(pool *p.Pool) *Scan {
+	return &Scan{Pool: pool}
+}
+
+func (s *Scan) Run(channel chan<- ScanResult) {
+	duration := time.Duration(s.Pool.Interval) * time.Second
+	ticker := time.NewTicker(duration)
+	defer ticker.Stop()
+
+	executeAndSendResult := func() {
+		r, err := execute(s.Pool)
+		if err != nil {
+			log.Printf("Error during scan of pool %v. err: %v", s.Pool.Name, err)
+		}
+		if r != nil {
+			log.Printf("Pool %v - %v", s.Pool.Name, r.FormatNmapRun())
+			scanResult := ScanResult{
+				PoolName: s.Pool.Name,
+				Output:   r,
+			}
+			channel <- scanResult
+		}
+	}
+
+	executeAndSendResult()
+
+	if !s.Pool.OneTineScan() {
+		for range ticker.C {
+			executeAndSendResult()
+		}
+	}
+}
+
+func execute(pool *p.Pool) (*output.NmapRun, error) {
+	data, err := executeCommand(pool)
+	if err != nil {
+		return nil, err
+	}
+	runOutput, err := out.ParseRunOutput(data)
+	if err != nil {
+		return nil, err
+	}
+	if !runOutput.IsSuccessfulScan() {
+		return nil, errors.New("something went wrong during scanning")
+	}
+	return runOutput, nil
+}
+
+func executeCommand(pool *p.Pool) ([]byte, error) {
+	ports := pool.FormatPorts()
+
+	args := []string{"-Pn", "-p", ports, "-oX", "-"}
+	args = append(args, pool.Hosts...)
+
+	cmd := exec.Command("nmap", args...)
+	return cmd.CombinedOutput()
+}
