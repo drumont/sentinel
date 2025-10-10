@@ -36,18 +36,5 @@
       "10000"
     ],
     "interval": 150
-  },
-  {
-    "name": "postgres",
-    "hosts": [
-      "host12",
-      "host22",
-      "host32"
-    ],
-    "ports": [
-      "8047",
-      "11000"
-    ],
-    "interval": 600
   }
 ]

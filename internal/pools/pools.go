@@ -67,7 +67,7 @@ func verifyExtension(path string) error {
 	extension := filepath.Ext(path)
 
 	if extension != SUPPORTED_EXTENSION {
-		return errors.New("file extension not supported")
+		return errors.New("file extension not supported. Only json are supported now")
 	}
 
 	return nil
