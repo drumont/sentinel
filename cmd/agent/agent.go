@@ -3,11 +3,14 @@ package main
 import (
 	"log"
 	"net/http"
+	"sentinel/internal/commons"
 	p "sentinel/internal/pools"
 	"sentinel/internal/scan"
 
 	"github.com/gin-gonic/gin"
 )
+
+var conf = commons.LoadConfig()
 
 func main() {
 
@@ -17,9 +20,9 @@ func main() {
 		Handler: router,
 	}
 
-	pools, err := p.ReadPools("/Users/drumont/Developer/drumont/sentinel/scripts/data.json")
+	pools, err := p.ReadPools(conf.PoolsFilePath)
 	if err != nil {
-		log.Print("Error when reading pools")
+		log.Printf("Error when reading pools %v", err)
 	}
 
 	scanner := scan.NewScanner(pools)

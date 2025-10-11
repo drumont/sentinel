@@ -9,10 +9,10 @@
       "80",
       "8443"
     ],
-    "interval": 30
+    "interval": 0
   },
   {
-    "name": "kafka",
+    "name": "elasticsearch",
     "hosts": [
       "host1",
       "host2",
@@ -22,32 +22,6 @@
       "8080",
       "9000"
     ],
-    "interval": 300
-  },
-  {
-    "name": "elasticsearch",
-    "hosts": [
-      "host11",
-      "host21",
-      "host31"
-    ],
-    "ports": [
-      "8082",
-      "10000"
-    ],
-    "interval": 150
-  },
-  {
-    "name": "postgres",
-    "hosts": [
-      "host12",
-      "host22",
-      "host32"
-    ],
-    "ports": [
-      "8047",
-      "11000"
-    ],
-    "interval": 600
+    "interval": 0
   }
 ]
