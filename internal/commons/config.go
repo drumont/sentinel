@@ -6,14 +6,13 @@ import (
 	"os"
 )
 
-
 type Config struct {
 	PoolsFilePath string
 }
 
-func (c *Config)valid() error {
+func (c *Config) valid() error {
 	if c.PoolsFilePath == "" {
-		return errors.New("Pools file path must be set")
+		return errors.New("pools file path must be set")
 	}
 	return nil
 }

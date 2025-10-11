@@ -24,10 +24,6 @@ func NewScan(pool *p.Pool) *Scan {
 }
 
 func (s *Scan) Run(channel chan<- ScanResult) {
-	duration := time.Duration(s.Pool.Interval) * time.Second
-	ticker := time.NewTicker(duration)
-	defer ticker.Stop()
-
 	executeAndSendResult := func() {
 		r, err := execute(s.Pool)
 		if err != nil {
@@ -46,6 +42,10 @@ func (s *Scan) Run(channel chan<- ScanResult) {
 	executeAndSendResult()
 
 	if !s.Pool.OneTineScan() {
+		duration := time.Duration(s.Pool.Interval) * time.Second
+		ticker := time.NewTicker(duration)
+		defer ticker.Stop()
+
 		for range ticker.C {
 			executeAndSendResult()
 		}

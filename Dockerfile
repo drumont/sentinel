@@ -14,7 +14,7 @@ RUN go build -v -o sentinel ./cmd/agent
 
 FROM alpine:3.20
 
-RUN adduser -D -u 10001 appuser && apk add --no-cache ca-certificates 
+RUN adduser -D -u 10001 appuser && apk add --no-cache ca-certificates nmap
 
 WORKDIR /app
 COPY --from=builder /app/sentinel /usr/local/bin/sentinel
