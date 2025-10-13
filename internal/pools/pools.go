@@ -18,7 +18,7 @@ type Pool struct {
 
 var SUPPORTED_EXTENSION = ".json"
 
-func (p *Pool) OneTineScan() bool {
+func (p *Pool) ExecuteOnce() bool {
 	if p.Interval == 0 {
 		return true
 	}

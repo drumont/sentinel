@@ -1,28 +1,42 @@
 package scan
 
 import (
+	"context"
 	"encoding/json"
 	"log"
 	"os"
 	p "sentinel/internal/pools"
+	"sync"
 )
 
 type Scanner struct {
 	Pools          []p.Pool
 	ResultsChannel chan ScanResult
+	wg             sync.WaitGroup
+	Ctx            context.Context
+	Cancel         context.CancelFunc
 }
 
 func NewScanner(pools []p.Pool) *Scanner {
 	channel := make(chan ScanResult, 100)
-	return &Scanner{Pools: pools, ResultsChannel: channel}
+	ctx, cancel := context.WithCancel(context.Background())
+	return &Scanner{Pools: pools, ResultsChannel: channel, Ctx: ctx, Cancel: cancel}
 }
 
 func (s *Scanner) InitScanning() {
-	for _, pool := range s.Pools {
-		scan := NewScan(&pool)
-		go scan.Run(s.ResultsChannel)
+	for i := range s.Pools {
+		s.wg.Add(1)
+		s.wg.Done()
+		scan := NewScan(&s.Pools[i])
+		go scan.Run(s.ResultsChannel, s.Ctx)
 	}
 	go s.writeResult()
+}
+
+func (s *Scanner) StopScanning() {
+	s.Cancel()
+	s.wg.Wait()
+	log.Printf("All scanning operations stopped")
 }
 
 func (s *Scanner) writeResult() {

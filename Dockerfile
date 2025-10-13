@@ -14,12 +14,13 @@ RUN go build -v -o sentinel ./cmd/agent
 
 FROM alpine:3.20
 
-RUN adduser -D -u 10001 appuser && apk add --no-cache ca-certificates nmap
+RUN adduser -D -u 10001 sentinel && apk add --no-cache ca-certificates nmap
 
 WORKDIR /app
 COPY --from=builder /app/sentinel /usr/local/bin/sentinel
 
-USER appuser
+RUN chown sentinel:sentinel -R /app
+USER sentinel
 
 # Set the executable as the container entrypoint
 ENTRYPOINT ["sentinel"]

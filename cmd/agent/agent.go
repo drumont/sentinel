@@ -5,20 +5,13 @@ import (
 	"net/http"
 	"sentinel/internal/commons"
 	p "sentinel/internal/pools"
+	r "sentinel/internal/router"
 	"sentinel/internal/scan"
-
-	"github.com/gin-gonic/gin"
 )
 
 var conf = commons.LoadConfig()
 
 func main() {
-
-	router := gin.Default()
-	server := &http.Server{
-		Addr:    ":8080",
-		Handler: router,
-	}
 
 	pools, err := p.ReadPools(conf.PoolsFilePath)
 	if err != nil {
@@ -27,6 +20,12 @@ func main() {
 
 	scanner := scan.NewScanner(pools)
 	scanner.InitScanning()
+
+	router := r.SetupRouter(scanner)
+	server := &http.Server{
+		Addr:    ":8080",
+		Handler: router,
+	}
 
 	err = server.ListenAndServe()
 	if err != nil {

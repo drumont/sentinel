@@ -9,7 +9,7 @@
       "80",
       "8443"
     ],
-    "interval": 0
+    "interval": 5
   },
   {
     "name": "elasticsearch",
