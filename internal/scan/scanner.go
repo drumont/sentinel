@@ -15,12 +15,13 @@ type Scanner struct {
 	wg             sync.WaitGroup
 	Ctx            context.Context
 	Cancel         context.CancelFunc
+	OutputFilePath string
 }
 
-func NewScanner(pools []p.Pool) *Scanner {
+func NewScanner(pools []p.Pool, fp string) *Scanner {
 	channel := make(chan ScanResult, 100)
 	ctx, cancel := context.WithCancel(context.Background())
-	return &Scanner{Pools: pools, ResultsChannel: channel, Ctx: ctx, Cancel: cancel}
+	return &Scanner{Pools: pools, ResultsChannel: channel, Ctx: ctx, Cancel: cancel, OutputFilePath: fp}
 }
 
 func (s *Scanner) InitScanning() {
@@ -40,7 +41,7 @@ func (s *Scanner) StopScanning() {
 }
 
 func (s *Scanner) writeResult() {
-	f, err := os.OpenFile("scan.json", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	f, err := os.OpenFile(s.OutputFilePath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Printf("Error occurs when creation file. err: %v", err)
 	}

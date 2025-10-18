@@ -18,7 +18,7 @@ func main() {
 		log.Printf("Error when reading pools %v", err)
 	}
 
-	scanner := scan.NewScanner(pools)
+	scanner := scan.NewScanner(pools, conf.OutputFilePath)
 	scanner.InitScanning()
 
 	router := r.SetupRouter(scanner)

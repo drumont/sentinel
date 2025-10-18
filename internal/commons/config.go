@@ -7,7 +7,8 @@ import (
 )
 
 type Config struct {
-	PoolsFilePath string
+	PoolsFilePath  string
+	OutputFilePath string
 }
 
 func (c *Config) valid() error {
@@ -19,7 +20,11 @@ func (c *Config) valid() error {
 
 func LoadConfig() *Config {
 	filePath := os.Getenv("POOLS_FILEPATH")
-	conf := &Config{PoolsFilePath: filePath}
+	outputFilePath := os.Getenv("OUTPUT_FILEPATH")
+	if outputFilePath == "" {
+		outputFilePath = "scan.json"
+	}
+	conf := &Config{PoolsFilePath: filePath, OutputFilePath: outputFilePath}
 	if err := conf.valid(); err != nil {
 		log.Fatalf("Error loading agent configuration %v", err)
 	}
