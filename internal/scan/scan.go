@@ -32,8 +32,8 @@ func (s *Scan) Run(channel chan<- ScanResult, ctx context.Context) {
 	}
 }
 
-func (s *Scan) runOnce(chanel chan<- ScanResult) {
-	s.executeAndSendResult(chanel)
+func (s *Scan) runOnce(channel chan<- ScanResult) {
+	s.executeAndSendResult(channel)
 }
 
 func (s *Scan) runMany(channel chan<- ScanResult, ctx context.Context) {
