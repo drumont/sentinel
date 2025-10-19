@@ -163,7 +163,7 @@ The `/stop` endpoint gracefully stops all running scans and puts the scanner in 
 
 ## Output
 
-By default, results are appended to `scan.json` (or the file specified in `OUTPUT_FILEPATH`). Each line is a JSON object with this shape:
+By default, results are appended to `scan.jsonl` (or the file specified in `OUTPUT_FILEPATH`). Each line is a JSON object with this shape:
 
 ```json
 {
