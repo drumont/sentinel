@@ -16,7 +16,7 @@ type Pool struct {
 	Interval int      `json:"interval"`
 }
 
-var SUPPORTED_EXTENSION = ".json"
+const SUPPORTED_EXTENSION = ".json"
 
 func (p *Pool) ExecuteOnce() bool {
 	if p.Interval == 0 {

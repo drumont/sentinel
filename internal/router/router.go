@@ -3,20 +3,24 @@ package router
 import (
 	"net/http"
 	"sentinel/internal/handlers"
-	"sentinel/internal/scan"
+	s "sentinel/internal/services"
 
 	"github.com/gin-gonic/gin"
 )
 
-func SetupRouter(scanner *scan.Scanner) http.Handler {
+func SetupRouter(services *s.SentinelServices) http.Handler {
 	r := gin.Default()
 
-	r.Handle("GET", "/health", func(ctx *gin.Context) {
+	r.Handle(http.MethodGet, "/health", func(ctx *gin.Context) {
 		handlers.HealthCheck(ctx)
 	})
 
-	r.Handle("POST", "/configure", func(ctx *gin.Context) {
-		handlers.Configure(ctx, scanner)
+	r.Handle(http.MethodPost, "/configure", func(ctx *gin.Context) {
+		handlers.Configure(ctx, services)
+	})
+
+	r.Handle(http.MethodGet, "/stop", func(ctx *gin.Context) {
+		handlers.Stop(ctx, services)
 	})
 
 	return r

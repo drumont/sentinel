@@ -7,12 +7,19 @@ import (
 	"net/http"
 	p "sentinel/internal/pools"
 	"sentinel/internal/scan"
+	s "sentinel/internal/services"
 
 	"github.com/gin-gonic/gin"
 )
 
-func Configure(ctx *gin.Context, scanner *scan.Scanner) {
+func Stop(ctx *gin.Context, services *s.SentinelServices) {
+	if services.CurrentScanner.State == scan.RUNNING {
+		services.CurrentScanner.StopScanning()
+	}
+	ctx.Status(http.StatusAccepted)
+}
 
+func Configure(ctx *gin.Context, services *s.SentinelServices) {
 	request := ctx.Request
 	var pools []p.Pool
 
@@ -29,7 +36,12 @@ func Configure(ctx *gin.Context, scanner *scan.Scanner) {
 		return
 	}
 
-	scanner.StopScanning()
+	if services.CurrentScanner.State == scan.RUNNING {
+		services.CurrentScanner.StopScanning()
+	}
 
-	ctx.JSON(200, pools)
+	services.CurrentScanner = scan.NewScanner(pools, services.Config.OutputFilePath)
+	services.CurrentScanner.InitScanning()
+
+	ctx.Status(http.StatusAccepted)
 }
