@@ -60,7 +60,7 @@ docker run -d \
   -v $(pwd)/pools.json:/app/pools.json:ro \
   -v $(pwd)/output:/app/output \
   -e POOLS_FILEPATH=/app/pools.json \
-  -e OUTPUT_FILEPATH=/app/output/scan.json \
+  -e OUTPUT_FILEPATH=/app/output/scan.jsonl \
   ghcr.io/drumont/sentinel:latest
 
 # check logs
@@ -80,8 +80,8 @@ The agent reads two environment variables at startup:
 Example (macOS / Linux):
 
 ```bash
-export POOLS_FILEPATH=$(pwd)/scripts/scan.json
-export OUTPUT_FILEPATH=$(pwd)/scan.json
+export POOLS_FILEPATH=$(pwd)/scripts/data.json
+export OUTPUT_FILEPATH=$(pwd)/scan.jsonl
 ./bin/agent
 ```
 
@@ -203,15 +203,14 @@ Ideas and low-risk improvements you can add:
 Run the agent locally with the provided example pools file:
 
 ```bash
-export POOLS_FILEPATH=$(pwd)/scripts/scan.json
-go run ./cmd/agent
+POOLS_FILEPATH=$(pwd)/scripts/data.json go run ./cmd/agent
 ```
 
 Or build and run the binary:
 
 ```bash
 go build -o bin/agent ./cmd/agent
-POOLS_FILEPATH=$(pwd)/scripts/scan.json OUTPUT_FILEPATH=$(pwd)/scan.json ./bin/agent
+POOLS_FILEPATH=$(pwd)/scripts/data.json OUTPUT_FILEPATH=$(pwd)/scan.jsonl ./bin/agent
 ```
 
 ## License & Contributing
