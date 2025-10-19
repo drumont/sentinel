@@ -34,7 +34,7 @@ func NewScanner(pools []p.Pool, fp string) *Scanner {
 
 func (s *Scanner) InitScanning() {
 	if len(s.Pools) == 0 {
-		log.Print("No pool configure. No scan to process")
+		log.Print("No pool configured. No scan to process")
 	}
 	for i := range s.Pools {
 		scan := NewScan(&s.Pools[i])
