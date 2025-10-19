@@ -7,8 +7,9 @@ This README explains how to build, configure and run the agent, the pools JSON f
 ## Key concepts
 
 - Pool: a named set of hosts, ports, and an interval. Each pool can be scanned once (interval = 0) or periodically.
-- Scanner: runs one goroutine per pool, executes `nmap` and sends parsed XML results into a writer which appends JSON results to a file.
-- API: a small HTTP server (port 8080) with `/health` and `/configure` endpoints.
+- Scanner: runs one goroutine per pool, executes `nmap` and sends parsed XML results into a writer which appends JSON results to a file. Has state management (RUNNING/STOPPED).
+- Services: a service layer that manages the scanner instance and configuration.
+- API: a small HTTP server (port 8080) with `/health`, `/configure`, and `/stop` endpoints.
 
 ## Prerequisites
 
@@ -73,7 +74,7 @@ docker stop sentinel && docker rm sentinel
 
 The agent reads two environment variables at startup:
 
-- `POOLS_FILEPATH` (required): path to the pools JSON file
+- `POOLS_FILEPATH` (optional): path to the pools JSON file. If not provided or file doesn't exist, the agent starts without active scans.
 - `OUTPUT_FILEPATH` (optional): path to the output file (default: `scan.json`)
 
 Example (macOS / Linux):
@@ -129,19 +130,36 @@ The agent parses the XML into Go structs and writes JSON results to the output f
 
 Start the agent and use these endpoints:
 
-- Health check
+- **Health check**
 
 ```bash
 curl http://localhost:8080/health
+# Returns: {"status": "yes"}
 ```
 
-- Configure (replace pools at runtime)
+- **Configure (replace pools at runtime)**
 
 ```bash
 curl -X POST -H "Content-Type: application/json" --data @pools.json http://localhost:8080/configure
+# Returns: HTTP 202 Accepted
 ```
 
-The `/configure` handler in the current code stops the running scanner and returns the parsed pools. (Behavior: it calls `scanner.StopScanning()` and returns the new pools. You can extend it to start a new scanner instance with the new pools.)
+The `/configure` endpoint stops any running scanner, creates a new scanner with the provided pools, and starts scanning immediately.
+
+- **Stop scanning**
+
+```bash
+curl http://localhost:8080/stop
+# Returns: HTTP 202 Accepted
+```
+
+The `/stop` endpoint gracefully stops all running scans and puts the scanner in STOPPED state.
+
+## Startup Behavior
+
+- If `POOLS_FILEPATH` is provided and the file exists, the agent loads pools at startup and begins scanning immediately.
+- If `POOLS_FILEPATH` is empty or the file doesn't exist, the agent starts with no active scans but is ready to accept configuration via the `/configure` endpoint.
+- The agent always starts the HTTP API server on port 8080 regardless of whether pools are configured.
 
 ## Output
 
@@ -158,23 +176,27 @@ The `output` structure follows the project's `internal/output` types.
 
 ## Graceful shutdown and concurrency notes
 
-- The scanner uses one goroutine per pool to run scans and a single writer goroutine that consumes results from a channel and appends to the output file.
-- Cancelling scans and ensuring the writer finishes cleanly requires context cancellation and waiting for goroutines (sync.WaitGroup). The current code includes a `StopScanning()` method on the scanner that cancels workers and waits for them.
-- When adding or replacing pools at runtime you should stop the old scanner cleanly, then create a new scanner with the updated pools and call `InitScanning()`.
+- The scanner maintains state (RUNNING/STOPPED) and uses context cancellation for cooperative shutdown of scan goroutines.
+- The scanner uses a single writer goroutine that consumes results from a channel and writes JSON to the output file.
+- The `/stop` endpoint and `/configure` endpoint both call `StopScanning()` which cancels the context and waits for all goroutines to finish using `sync.WaitGroup`.
+- The services layer (`SentinelServices`) manages the scanner lifecycle and ensures proper cleanup when replacing configurations.
 
 ## Troubleshooting
 
-- If no results are written until the program exits, ensure that the writer goroutine is running and the results channel is being closed when workers finish. Also check that file writes are followed by `f.Sync()`.
+- If no results are written, check that the scanner is in RUNNING state and that pools are properly configured.
+- If scans don't start at startup, verify that `POOLS_FILEPATH` points to a valid JSON file and check the logs for parsing errors.
 - If ports are malformed (extra spaces like " 12100"), trim or validate them when parsing pools.
+- Use the `/health` endpoint to verify the API server is running, and `/stop` to gracefully halt scanning operations.
 
 ## Extending the project
 
 Ideas and low-risk improvements you can add:
 
-- Make the `/configure` endpoint replace and restart the scanner automatically (start new scanner after `StopScanning`).
 - Add validation and normalization of hosts/ports (trim spaces, validate IPs/ranges).
 - Add tests for JSON parsing and the `output.ParseRunOutput` XML parsing.
-- Add better shutdown handling for the HTTP server (listen for signals and call scanner.StopScanning()).
+- Add better shutdown handling for the HTTP server (listen for signals and call `scanner.StopScanning()`).
+- Add a `/status` endpoint to report current scanner state and active pools.
+- Add metrics and monitoring capabilities (scan duration, success/failure rates).
 
 ## Development
 
