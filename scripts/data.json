@@ -2,14 +2,14 @@
   {
     "name": "kafka",
     "hosts": [
-      "51.15.8.251",
-      "51.15.9.89"
+      "host21",
+      "host22"
     ],
     "ports": [
       "80",
       "8443"
     ],
-    "interval": 0
+    "interval": 5
   },
   {
     "name": "elasticsearch",

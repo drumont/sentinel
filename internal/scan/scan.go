@@ -1,6 +1,7 @@
 package scan
 
 import (
+	"context"
 	"errors"
 	"log"
 	"os/exec"
@@ -23,32 +24,46 @@ func NewScan(pool *p.Pool) *Scan {
 	return &Scan{Pool: pool}
 }
 
-func (s *Scan) Run(channel chan<- ScanResult) {
-	executeAndSendResult := func() {
-		r, err := execute(s.Pool)
-		if err != nil {
-			log.Printf("Error during scan of pool %v. err: %v", s.Pool.Name, err)
-		}
-		if r != nil {
-			log.Printf("Pool %v - %v", s.Pool.Name, r.FormatNmapRun())
-			scanResult := ScanResult{
-				PoolName: s.Pool.Name,
-				Output:   r,
-			}
-			channel <- scanResult
+func (s *Scan) Run(channel chan<- ScanResult, ctx context.Context) {
+	if s.Pool.ExecuteOnce() {
+		s.runOnce(channel)
+	} else {
+		s.runMany(channel, ctx)
+	}
+}
+
+func (s *Scan) runOnce(channel chan<- ScanResult) {
+	s.executeAndSendResult(channel)
+}
+
+func (s *Scan) runMany(channel chan<- ScanResult, ctx context.Context) {
+	duration := time.Duration(s.Pool.Interval) * time.Second
+	ticker := time.NewTicker(duration)
+	defer ticker.Stop()
+
+	for {
+		select {
+		case <-ctx.Done():
+			log.Printf("Pool %v scan cancel", s.Pool.Name)
+			return
+		case <-ticker.C:
+			s.executeAndSendResult(channel)
 		}
 	}
+}
 
-	executeAndSendResult()
-
-	if !s.Pool.OneTineScan() {
-		duration := time.Duration(s.Pool.Interval) * time.Second
-		ticker := time.NewTicker(duration)
-		defer ticker.Stop()
-
-		for range ticker.C {
-			executeAndSendResult()
+func (s *Scan) executeAndSendResult(channel chan<- ScanResult) {
+	r, err := execute(s.Pool)
+	if err != nil {
+		log.Printf("Error during scan of pool %v. err: %v", s.Pool.Name, err)
+	}
+	if r != nil {
+		log.Printf("Pool %v - %v", s.Pool.Name, r.FormatNmapRun())
+		scanResult := ScanResult{
+			PoolName: s.Pool.Name,
+			Output:   r,
 		}
+		channel <- scanResult
 	}
 }
 

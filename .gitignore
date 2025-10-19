@@ -33,3 +33,4 @@ go.work.sum
 
 
 scripts/ar-pools.json
+scripts/data-local.json
