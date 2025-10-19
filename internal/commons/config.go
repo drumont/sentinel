@@ -16,7 +16,7 @@ func (c *Config) valid() error {
 	if c.PoolsFilePath == "" {
 		return errors.New("pools file path is not set")
 	}
-	if c.OutputFilePath == "" && !strings.Contains(c.OutputFilePath, ".jsonl") {
+	if c.OutputFilePath == "" || !strings.Contains(c.OutputFilePath, ".jsonl") {
 		log.Printf("Only .jsonl is supported for output file. Fallback to default output location")
 		c.OutputFilePath = "scan.jsonl"
 	}
