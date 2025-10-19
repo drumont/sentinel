@@ -62,7 +62,7 @@ func (n *NmapRun) FormatNmapRun() string {
 	for _, host := range n.Hosts {
 		formatted += fmt.Sprintf("Host: %v ", host.Address.Addr)
 		for _, port := range host.Ports {
-			formatted += fmt.Sprintf("Port: %v State %v ", port.PortId, port.State.State)
+			formatted += fmt.Sprintf("Port: %v -> %v ", port.PortId, port.State.State)
 		}
 		formatted += " | "
 	}
