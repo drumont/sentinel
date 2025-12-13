@@ -9,7 +9,8 @@ This README explains how to build, configure and run the agent, the pools JSON f
 - Pool: a named set of hosts, ports, and an interval. Each pool can be scanned once (interval = 0) or periodically.
 - Scanner: runs one goroutine per pool, executes `nmap` and sends parsed XML results into a writer which appends JSON results to a file. Has state management (RUNNING/STOPPED).
 - Services: a service layer that manages the scanner instance and configuration.
-- API: a small HTTP server (port 8080) with `/health`, `/configure`, and `/stop` endpoints.
+- API: a small HTTP server (port 8080) with `/health`, `/configure`, `/stop`, and `/metrics` endpoints.
+- Metrics: Prometheus metrics exposed via `/metrics` endpoint for monitoring scan health and performance.
 
 ## Prerequisites
 
@@ -155,6 +156,16 @@ curl http://localhost:8080/stop
 
 The `/stop` endpoint gracefully stops all running scans and puts the scanner in STOPPED state.
 
+- **Prometheus metrics**
+
+```bash
+curl http://localhost:8080/metrics
+# Returns: Prometheus-formatted metrics
+```
+
+The `/metrics` endpoint exposes Prometheus metrics for monitoring scan operations. Available metrics include:
+- `sentinel_pools_scan_state`: Gauge indicating scan state (0=failure, 1=success) labeled by pool name, hostnames, and ports
+
 ## Startup Behavior
 
 - If `POOLS_FILEPATH` is provided and the file exists, the agent loads pools at startup and begins scanning immediately.
@@ -163,23 +174,31 @@ The `/stop` endpoint gracefully stops all running scans and puts the scanner in 
 
 ## Output
 
-By default, results are appended to `scan.jsonl` (or the file specified in `OUTPUT_FILEPATH`). Each line is a JSON object with this shape:
+By default, results are appended to `scan.jsonl` (or the file specified in `OUTPUT_FILEPATH`). The output format is JSON Lines (newline-delimited JSON) where each line is a complete JSON object representing a scan result. Results are written immediately as scans complete and are flushed to disk continuously.
+
+Each line has this shape:
 
 ```json
 {
   "pool-name": "example-pool",
-  "output": {}
+  "output": {
+    "command": "nmap -Pn -p 80,8443,10000 host1 host2",
+    "start": "1760041198",
+    "host": [...],
+    "run-stats": {...}
+  }
 }
 ```
 
-The `output` structure follows the project's `internal/output` types.
+The `output` structure follows the project's `internal/output` types, which parse the nmap XML output into structured JSON.
 
 ## Graceful shutdown and concurrency notes
 
 - The scanner maintains state (RUNNING/STOPPED) and uses context cancellation for cooperative shutdown of scan goroutines.
-- The scanner uses a single writer goroutine that consumes results from a channel and writes JSON to the output file.
+- The scanner uses a single writer goroutine that consumes results from a buffered channel and writes JSON to the output file continuously (results appear immediately as scans complete).
 - The `/stop` endpoint and `/configure` endpoint both call `StopScanning()` which cancels the context and waits for all goroutines to finish using `sync.WaitGroup`.
 - The services layer (`SentinelServices`) manages the scanner lifecycle and ensures proper cleanup when replacing configurations.
+- Prometheus metrics are updated for each scan execution, tracking success/failure state per pool.
 
 ## Troubleshooting
 
@@ -196,7 +215,7 @@ Ideas and low-risk improvements you can add:
 - Add tests for JSON parsing and the `output.ParseRunOutput` XML parsing.
 - Add better shutdown handling for the HTTP server (listen for signals and call `scanner.StopScanning()`).
 - Add a `/status` endpoint to report current scanner state and active pools.
-- Add metrics and monitoring capabilities (scan duration, success/failure rates).
+- Add additional Prometheus metrics (scan duration histograms, total scans counter, hosts/ports discovered).
 
 ## Development
 

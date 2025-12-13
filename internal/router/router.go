@@ -6,6 +6,7 @@ import (
 	s "sentinel/internal/services"
 
 	"github.com/gin-gonic/gin"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 func SetupRouter(services *s.SentinelServices) http.Handler {
@@ -22,6 +23,8 @@ func SetupRouter(services *s.SentinelServices) http.Handler {
 	r.Handle(http.MethodGet, "/stop", func(ctx *gin.Context) {
 		handlers.Stop(ctx, services)
 	})
+
+	r.Handle(http.MethodGet, "/metrics", gin.WrapH(promhttp.Handler()))
 
 	return r
 }
