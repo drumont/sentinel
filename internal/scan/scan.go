@@ -9,6 +9,19 @@ import (
 	out "sentinel/internal/output"
 	p "sentinel/internal/pools"
 	"time"
+
+	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promauto"
+)
+
+var (
+	poolsScanState = promauto.NewGaugeVec(
+		prometheus.GaugeOpts{
+			Name: "sentinel_pools_scan_state",
+			Help: "State of pool scan",
+		},
+		[]string{"pool", "hostnames", "ports"},
+	)
 )
 
 type Scan struct {
@@ -77,8 +90,10 @@ func execute(pool *p.Pool) (*output.NmapRun, error) {
 		return nil, err
 	}
 	if !runOutput.IsSuccessfulScan() {
+		poolsScanState.WithLabelValues(pool.Name, pool.FormatHosts(), pool.FormatPorts()).Set(0)
 		return nil, errors.New("something went wrong during scanning")
 	}
+	poolsScanState.WithLabelValues(pool.Name, pool.FormatHosts(), pool.FormatPorts()).Set(1)
 	return runOutput, nil
 }
 
