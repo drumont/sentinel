@@ -13,8 +13,13 @@ type NmapRun struct {
 }
 
 type Host struct {
+	HostName Hostname `xml:"hostnames>hostname" json:"hostname"`
 	Address Address `xml:"address" json:"address"`
 	Ports   []Port  `xml:"ports>port" json:"ports"`
+}
+
+type Hostname struct {
+	Name string `xml:"name,attr" json:"name"`
 }
 
 type Address struct {
@@ -41,13 +46,7 @@ type Finished struct {
 	Summary string `xml:"summary,attr" json:"summary"`
 }
 
-func (n *NmapRun) IsSuccessfulScan() bool {
-	if n.Hosts == nil {
-		return false
-	}
-	return true
-}
-
+   
 func ParseRunOutput(out []byte) (*NmapRun, error) {
 	var runOutput NmapRun
 	err := xml.Unmarshal(out, &runOutput)
@@ -60,7 +59,7 @@ func ParseRunOutput(out []byte) (*NmapRun, error) {
 func (n *NmapRun) FormatNmapRun() string {
 	var formatted = ""
 	for _, host := range n.Hosts {
-		formatted += fmt.Sprintf("Host: %v ", host.Address.Addr)
+		formatted += fmt.Sprintf("Host: %v ", host.HostName.Name)
 		for _, port := range host.Ports {
 			formatted += fmt.Sprintf("Port: %v -> %v ", port.PortId, port.State.State)
 		}

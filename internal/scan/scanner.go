@@ -3,7 +3,7 @@ package scan
 import (
 	"context"
 	"encoding/json"
-	"log"
+	"log/slog"
 	"os"
 	p "sentinel/internal/pools"
 	"sync"
@@ -34,7 +34,7 @@ func NewScanner(pools []p.Pool, fp string) *Scanner {
 
 func (s *Scanner) InitScanning() {
 	if len(s.Pools) == 0 {
-		log.Print("No pool configured. No scan to process")
+		slog.Info("No pool configured. No scan to process")
 	}
 	for i := range s.Pools {
 		scan := NewScan(&s.Pools[i])
@@ -48,13 +48,13 @@ func (s *Scanner) StopScanning() {
 	s.cancel()
 	s.writerWg.Wait()
 	s.State = STOPPED
-	log.Printf("All scans stopped")
+	slog.Info("All scans stopped")
 }
 
 func (s *Scanner) writeResult(ctx context.Context) {
 	f, err := os.OpenFile(s.OutputFilePath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
-		log.Printf("Error occurs when creation file. err: %v", err)
+		slog.Error("Output file creation failed with error: "+ err.Error())
 	}
 	defer f.Close()
 
@@ -63,14 +63,13 @@ func (s *Scanner) writeResult(ctx context.Context) {
 	for {
 		select {
 		case <-ctx.Done():
-			log.Printf("Scanner result writer done")
+			slog.Info("Scanner result writer done")
 			return
 		case result := <-s.ResultsChannel:
 			if err := enc.Encode(result); err != nil {
-				log.Printf("Error writing new line: %v", err)
+				slog.Error("Writing scan result failed with error: "+ err.Error())
 				continue
 			}
-			log.Printf("Written result to file for pool %v", result.PoolName)
 		}
 	}
 }
