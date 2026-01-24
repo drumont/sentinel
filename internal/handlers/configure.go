@@ -3,7 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"io"
-	"log"
+	"log/slog"
 	"net/http"
 	p "sentinel/internal/pools"
 	"sentinel/internal/scan"
@@ -25,13 +25,13 @@ func Configure(ctx *gin.Context, services *s.SentinelServices) {
 
 	body, err := io.ReadAll(request.Body)
 	if err != nil {
-		log.Print(err)
+		slog.Error("Reading request body failed with error: "+ err.Error())
 		ctx.AbortWithStatus(http.StatusBadRequest)
 		return
 	}
 
 	if err = json.Unmarshal(body, &pools); err != nil {
-		log.Printf("Error parsing request %v", err)
+		slog.Error("Parsing request body failed with error: "+ err.Error())
 		ctx.AbortWithStatus(http.StatusBadRequest)
 		return
 	}

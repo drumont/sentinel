@@ -2,8 +2,8 @@ package scan
 
 import (
 	"context"
-	"errors"
-	"log"
+	"fmt"
+	"log/slog"
 	"os/exec"
 	"sentinel/internal/output"
 	out "sentinel/internal/output"
@@ -53,11 +53,10 @@ func (s *Scan) runMany(channel chan<- ScanResult, ctx context.Context) {
 	duration := time.Duration(s.Pool.Interval) * time.Second
 	ticker := time.NewTicker(duration)
 	defer ticker.Stop()
-
 	for {
 		select {
 		case <-ctx.Done():
-			log.Printf("Pool %v scan cancel", s.Pool.Name)
+			slog.Info("Pool scan cancel", "pool", s.Pool.Name)
 			return
 		case <-ticker.C:
 			s.executeAndSendResult(channel)
@@ -68,10 +67,10 @@ func (s *Scan) runMany(channel chan<- ScanResult, ctx context.Context) {
 func (s *Scan) executeAndSendResult(channel chan<- ScanResult) {
 	r, err := execute(s.Pool)
 	if err != nil {
-		log.Printf("Error during scan of pool %v. err: %v", s.Pool.Name, err)
+		slog.Error(err.Error(), "pool", s.Pool.Name, slog.Int("host_count", len(s.Pool.Hosts)))
 	}
 	if r != nil {
-		log.Printf("Pool %v - %v", s.Pool.Name, r.FormatNmapRun())
+		slog.Info("successful scan", "pool", s.Pool.Name, "report", r.Hosts )
 		scanResult := ScanResult{
 			PoolName: s.Pool.Name,
 			Output:   r,
@@ -89,9 +88,9 @@ func execute(pool *p.Pool) (*output.NmapRun, error) {
 	if err != nil {
 		return nil, err
 	}
-	if !runOutput.IsSuccessfulScan() {
+	if !verifyScanOutput(pool, runOutput) {
 		poolsScanState.WithLabelValues(pool.Name, pool.FormatHosts(), pool.FormatPorts()).Set(0)
-		return nil, errors.New("something went wrong during scanning")
+		return nil, fmt.Errorf("Error: %v", runOutput.Finished.Summary)
 	}
 	poolsScanState.WithLabelValues(pool.Name, pool.FormatHosts(), pool.FormatPorts()).Set(1)
 	return runOutput, nil
@@ -106,3 +105,10 @@ func executeCommand(pool *p.Pool) ([]byte, error) {
 	cmd := exec.Command("nmap", args...)
 	return cmd.CombinedOutput()
 }
+
+func verifyScanOutput(pool *p.Pool, output *output.NmapRun) bool {
+	if len(output.Hosts) == len(pool.Hosts) {
+		return true
+	}
+	return false
+} 
